@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/catalog}" method="get">
+
+    <input type="submit" value="КАТАЛОГ"/>
+</form>
+
+<table>
+    <tr>
+        <th>НАЗВАНИЕ</th>
+        <th>ЗАКАЗОВ</th>
+        <th>ЦЕНА</th>
+        <th>ОЦЕНКА</th>
+
+
+    </tr>
+    <tr>
+        <td th:text="${product.productName}"></td>
+        <td th:text="${product.orders}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${average}"></td>
+
+
+    </tr>
+</table>
+
+<hr>
+
+<table>
+    <tr>
+        <th>Оценка</th>
+
+        <th>Дата</th>
+
+    </tr>
+    <tr th:each="r : ${rates}">
+        <td th:text="${r.rate}"></td>
+        <td th:text="${r.date}"></td>
+    </tr>
+</table>
+
+<hr>
+
+<form th:action="@{/rates/{id}(id=${product.id})}" th:object="${rate}" method="post">
+
+    <input type="hidden" th:field="*{cardProduct.id}">
+
+    <label for="rate">Rate:</label>
+    <input type="number" id="rate" th:field="*{rate}">
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" th:field="*{date}">
+
+    <input type="submit" value="Submit">
+</form>
+<hr>
+<form th:action="@{/product/sort/{id}(id=${product.id})}" method="get">
+    <input type="submit" value="CОРТИРОВАТЬ ПО ДАТЕ"/>
+</form>
+</body>
+</html>

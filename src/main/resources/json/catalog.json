@@ -1,0 +1,101 @@
+[
+  {
+    "productName": "Alice in Wonderland",
+    "rates": [
+      {
+        "rate": 5,
+        "date": "2022-12-12"
+      },
+      {
+        "rate": 3,
+        "date": "2022-10-15"
+      },
+      {
+        "rate": 4,
+        "date": "2023-02-01"
+      }
+    ],
+    "orders": 99,
+    "price": 34.6
+  },
+  {
+    "productName": "Cinderella",
+    "rates": [
+      {
+        "rate": 4,
+        "date": "2021-03-09"
+      },
+      {
+        "rate": 3,
+        "date": "2023-01-27"
+      },
+      {
+        "rate": 4,
+        "date": "2023-01-05"
+      },
+      {
+        "rate": 3,
+        "date": "2022-09-13"
+      },
+      {
+        "rate": 5,
+        "date": "2022-11-24"
+      }
+    ],
+    "orders": 219,
+    "price": 33.2
+  },
+  {
+    "productName": "Cruel Prince",
+    "rates": [
+      {
+        "rate": 5,
+        "date": "2022-12-09"
+      },
+      {
+        "rate": 5,
+        "date": "2023-01-28"
+      }
+    ],
+    "orders": 178,
+    "price": 33.7
+  },
+  {
+    "productName": "Jane Eyre",
+    "rates": [
+      {
+        "rate": 4,
+        "date": "2023-01-01"
+      },
+      {
+        "rate": 5,
+        "date": "2022-11-04"
+      },
+      {
+        "rate": 4,
+        "date": "2022-12-31"
+      }
+    ],
+    "orders": 341,
+    "price": 34.1
+  },
+  {
+    "productName": "White Fang",
+    "rates": [
+      {
+        "rate": 4,
+        "date": "2023-03-12"
+      },
+      {
+        "rate": 5,
+        "date": "2023-04-10"
+      },
+      {
+        "rate": 4,
+        "date": "2023-02-01"
+      }
+    ],
+    "orders": 137,
+    "price": 32.9
+  }
+]

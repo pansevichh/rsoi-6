@@ -1,0 +1,62 @@
+<!doctype html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица данных из Java</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>НАЗВАНИЕ</th>
+        <th>ЗАКАЗОВ</th>
+        <th>ЦЕНА</th>
+        <th>УДАЛЕНИЕ</th>
+        <th>РЕДАКТИРОВАНИЕ</th>
+        <th>ОЦЕНИТЬ</th>
+        <th>ОЦЕНКА</th>
+
+
+    </tr>
+    <tr th:each="product,iState : ${products}">
+        <td th:text="${product.productName}"></td>
+        <td th:text="${product.orders}"></td>
+        <td th:text="${product.price}"></td>
+        <th>
+            <form th:action="@{/catalog/delete/{id}(id=${product.id})}" method="post">
+                <input type="submit" value="УДАЛИТЬ"/>
+            </form>
+        </th>
+        <th>
+            <form th:action="@{/catalog/edit/{id}(id=${product.id})}" method="get">
+                <input type="submit" value="РЕДАКТИРОВАТЬ"/>
+            </form>
+        </th>
+        <th>
+            <form th:action="@{/product/rate/{id}(id=${product.id})}" method="get">
+                <input type="submit" value="ОЦЕНИТЬ"/>
+            </form>
+        </th>
+        <td th:text="${rates.get(iState.index)}"></td>
+    </tr>
+</table>
+
+<hr>
+
+<form th:action="@{/catalog/add}" method="post">
+    <label for="productName">Название продукта:</label>
+    <input type="text" id="productName" name="productName"/>
+
+    <label for="orders">Количество заказов:</label>
+    <input type="number" id="orders" name="orders"/>
+
+    <label for="price">Цена:</label>
+    <input type="number" id="price" name="price"/>
+
+    <button type="submit">Добавить</button>
+</form>
+<hr>
+<form th:action="@{/catalog/sort}" method="get">
+    <input type="submit" value="CОРТИРОВАТЬ ПО ОЦЕНКЕ"/>
+</form>
+</body>
+</html>

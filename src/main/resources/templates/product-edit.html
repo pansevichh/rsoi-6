@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/catalog}" method="get">
+
+    <input type="submit" value="КАТАЛОГ"/>
+</form>
+
+<table>
+    <tr>
+        <th>НАЗВАНИЕ</th>
+        <th>ЗАКАЗОВ</th>
+        <th>ЦЕНА</th>
+
+
+    </tr>
+    <tr>
+        <td th:text="${product.productName}"></td>
+        <td th:text="${product.orders}"></td>
+        <td th:text="${product.price}"></td>
+
+    </tr>
+</table>
+
+<hr>
+<form th:action="@{/edit/{id}(id=${product.id})}" th:object="${product}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+
+    <label for="productName">Название продукта:</label>
+    <input type="text" id="productName" th:field="*{productName}"/>
+
+    <label for="orders">Количество заказов:</label>
+    <input type="number" id="orders" th:field="*{orders}"/>
+
+    <label for="price">Цена:</label>
+    <input type="number" id="price" th:field="*{price}"/>
+
+    <button type="submit">Сохранить</button>
+</form>
+
+</body>
+</html>
